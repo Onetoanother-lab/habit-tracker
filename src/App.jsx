@@ -302,7 +302,7 @@ Respond in 2–4 sentences. Be encouraging, practical and personal.`;
   const isDark = level >= 5;
 
   return (
-    <div className={`min-h-screen bg-gradient-to-br ${theme.bg} text-${isDark ? 'white' : 'gray-900'} transition-colors duration-1000`}>
+    <div className={`min-h-screen bg-linear-to-br ${theme.bg} text-${isDark ? 'white' : 'gray-900'} transition-colors duration-1000`}>
       <div className="max-w-5xl mx-auto px-4 sm:px-6 py-8">
         {/* Header */}
         <header className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6 mb-10">
@@ -315,7 +315,7 @@ Respond in 2–4 sentences. Be encouraging, practical and personal.`;
             </p>
           </div>
 
-          <div className={`px-5 py-3 rounded-2xl bg-gradient-to-r ${theme.accent} shadow-lg shadow-black/30 text-white font-bold text-xl flex items-center gap-3`}>
+          <div className={`px-5 py-3 rounded-2xl bg-linear-to-r ${theme.accent} shadow-lg shadow-black/30 text-white font-bold text-xl flex items-center gap-3`}>
             <Award size={28} className="text-yellow-300" />
             <span>Level {level}</span>
           </div>
@@ -330,7 +330,7 @@ Respond in 2–4 sentences. Be encouraging, practical and personal.`;
               className={`
                 px-5 py-2.5 rounded-full font-medium transition-all
                 ${selectedView === view 
-                  ? `bg-gradient-to-r ${theme.accent} text-white shadow-lg` 
+                  ? `bg-linear-to-r ${theme.accent} text-white shadow-lg` 
                   : isDark 
                     ? 'bg-white/10 hover:bg-white/20' 
                     : 'bg-white hover:bg-gray-100 shadow-sm'}
@@ -366,7 +366,7 @@ Respond in 2–4 sentences. Be encouraging, practical and personal.`;
                 <div className="flex gap-3">
                   <button
                     onClick={addHabit}
-                    className={`flex-1 py-3 rounded-xl font-medium ${`bg-gradient-to-r ${theme.accent} text-white`}`}
+                    className={`flex-1 py-3 rounded-xl font-medium ${`bg-linear-to-r ${theme.accent} text-white`}`}
                   >
                     Create Habit (+10 XP)
                   </button>
@@ -440,7 +440,7 @@ Respond in 2–4 sentences. Be encouraging, practical and personal.`;
                 onClick={generateAITasks}
                 disabled={generatingTasks}
                 className={`px-5 py-2.5 rounded-xl font-medium flex items-center gap-2 transition-all ${
-                  `bg-gradient-to-r ${theme.accent} text-white shadow-md`
+                  `bg-linear-to-r ${theme.accent} text-white shadow-md`
                 } disabled:opacity-50`}
               >
                 {generatingTasks ? (
@@ -473,7 +473,7 @@ Respond in 2–4 sentences. Be encouraging, practical and personal.`;
                       {task.name}
                     </span>
                     {task.aiGenerated && (
-                      <span className="ml-2 text-xs px-2.5 py-1 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-full">
+                      <span className="ml-2 text-xs px-2.5 py-1 bg-linear-to-r from-purple-600 to-pink-600 text-white rounded-full">
                         AI
                       </span>
                     )}
@@ -510,15 +510,15 @@ Respond in 2–4 sentences. Be encouraging, practical and personal.`;
                   </div>
 
                   <div className="grid grid-cols-3 gap-4">
-                    <div className="text-center p-4 bg-gradient-to-br from-amber-600 to-red-600 rounded-xl text-white">
+                    <div className="text-center p-4 bg-linear-to-br from-amber-600 to-red-600 rounded-xl text-white">
                       <div className="text-3xl font-bold">{getStreak(habit)}</div>
                       <div className="text-sm opacity-90">Streak</div>
                     </div>
-                    <div className="text-center p-4 bg-gradient-to-br from-blue-600 to-cyan-600 rounded-xl text-white">
+                    <div className="text-center p-4 bg-linear-to-br from-blue-600 to-cyan-600 rounded-xl text-white">
                       <div className="text-3xl font-bold">{Object.keys(habit.completions).length}</div>
                       <div className="text-sm opacity-90">Days</div>
                     </div>
-                    <div className="text-center p-4 bg-gradient-to-br from-emerald-600 to-teal-600 rounded-xl text-white">
+                    <div className="text-center p-4 bg-linear-to-br from-emerald-600 to-teal-600 rounded-xl text-white">
                       <div className="text-3xl font-bold">{getCompletionRate(habit)}%</div>
                       <div className="text-sm opacity-90">Success</div>
                     </div>
@@ -531,7 +531,7 @@ Respond in 2–4 sentences. Be encouraging, practical and personal.`;
 
         {selectedView === 'ai' && (
           <div className="space-y-8">
-            <div className={`p-6 rounded-2xl ${isDark ? 'bg-gradient-to-br from-purple-900/40 to-pink-900/40 border border-purple-500/30' : 'bg-gradient-to-br from-indigo-50 to-purple-50'}`}>
+            <div className={`p-6 rounded-2xl ${isDark ? 'bg-linear-to-br from-purple-900/40 to-pink-900/40 border border-purple-500/30' : 'bg-linear-to-br from-indigo-50 to-purple-50'}`}>
               <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
                 <Sparkles /> AI Coach
               </h2>
@@ -546,7 +546,7 @@ Respond in 2–4 sentences. Be encouraging, practical and personal.`;
                 onClick={generateAIInsights}
                 disabled={loadingAI || habits.length === 0}
                 className={`w-full py-4 rounded-xl font-medium transition-all flex items-center justify-center gap-3 ${
-                  `bg-gradient-to-r ${theme.accent} text-white`
+                  `bg-linear-to-r ${theme.accent} text-white`
                 } disabled:opacity-50 disabled:cursor-not-allowed`}
               >
                 {loadingAI ? (
@@ -616,7 +616,7 @@ Respond in 2–4 sentences. Be encouraging, practical and personal.`;
                 <button
                   onClick={sendChatMessage}
                   disabled={!chatInput.trim()}
-                  className={`px-6 rounded-xl font-medium ${`bg-gradient-to-r ${theme.accent} text-white`} disabled:opacity-50`}
+                  className={`px-6 rounded-xl font-medium ${`bg-linear-to-r ${theme.accent} text-white`} disabled:opacity-50`}
                 >
                   Send
                 </button>
