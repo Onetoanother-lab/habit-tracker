@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "title": "Make your bed",
+    "difficulty": "easy",
+    "category": "discipline",
+    "repeatable": true,
+    "estimatedMinutes": 2
+  },
+  {
+    "id": 2,
+    "title": "Drink 2 glasses of water",
+    "difficulty": "easy",
+    "category": "health",
+    "repeatable": true,
+    "estimatedMinutes": 2
+  },
+  {
+    "id": 3,
+    "title": "10-minute walk",
+    "difficulty": "easy",
+    "category": "fitness",
+    "repeatable": true,
+    "estimatedMinutes": 10
+  },
+  {
+    "id": 4,
+    "title": "Stretch for 5 minutes",
+    "difficulty": "easy",
+    "category": "fitness",
+    "repeatable": true,
+    "estimatedMinutes": 5
+  },
+  {
+    "id": 5,
+    "title": "Read 5 pages",
+    "difficulty": "easy",
+    "category": "learning",
+    "repeatable": true,
+    "estimatedMinutes": 10
+  },
+  {
+    "id": 21,
+    "title": "5000 steps",
+    "difficulty": "medium",
+    "category": "fitness",
+    "repeatable": true,
+    "estimatedMinutes": 45
+  },
+  {
+    "id": 22,
+    "title": "15-minute workout",
+    "difficulty": "medium",
+    "category": "fitness",
+    "repeatable": true,
+    "estimatedMinutes": 15
+  },
+  {
+    "id": 23,
+    "title": "Read 20 pages",
+    "difficulty": "medium",
+    "category": "learning",
+    "repeatable": true,
+    "estimatedMinutes": 30
+  },
+  {
+    "id": 24,
+    "title": "Write 200 words",
+    "difficulty": "medium",
+    "category": "productivity",
+    "repeatable": true,
+    "estimatedMinutes": 20
+  },
+  {
+    "id": 25,
+    "title": "Learn a new concept",
+    "difficulty": "medium",
+    "category": "learning",
+    "repeatable": true,
+    "estimatedMinutes": 30
+  },
+  {
+    "id": 36,
+    "title": "Wake up 1 hour earlier",
+    "difficulty": "hard",
+    "category": "discipline",
+    "repeatable": true,
+    "estimatedMinutes": 0
+  },
+  {
+    "id": 37,
+    "title": "45-minute deep work",
+    "difficulty": "hard",
+    "category": "productivity",
+    "repeatable": true,
+    "estimatedMinutes": 45
+  },
+  {
+    "id": 38,
+    "title": "100 push-ups",
+    "difficulty": "hard",
+    "category": "fitness",
+    "repeatable": true,
+    "estimatedMinutes": 30
+  },
+  {
+    "id": 39,
+    "title": "30-minute run or brisk walk",
+    "difficulty": "hard",
+    "category": "fitness",
+    "repeatable": true,
+    "estimatedMinutes": 30
+  },
+  {
+    "id": 40,
+    "title": "No entertainment for a day",
+    "difficulty": "hard",
+    "category": "discipline",
+    "repeatable": true,
+    "estimatedMinutes": 0
+  }
+]
