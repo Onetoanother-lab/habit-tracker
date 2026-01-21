@@ -1,122 +1,47 @@
-[
-  {
-    "id": 1,
-    "title": "Make your bed",
-    "difficulty": "easy",
-    "category": "discipline",
-    "repeatable": true,
-    "estimatedMinutes": 2
-  },
-  {
-    "id": 2,
-    "title": "Drink 2 glasses of water",
-    "difficulty": "easy",
-    "category": "health",
-    "repeatable": true,
-    "estimatedMinutes": 2
-  },
-  {
-    "id": 3,
-    "title": "10-minute walk",
-    "difficulty": "easy",
-    "category": "fitness",
-    "repeatable": true,
-    "estimatedMinutes": 10
-  },
-  {
-    "id": 4,
-    "title": "Stretch for 5 minutes",
-    "difficulty": "easy",
-    "category": "fitness",
-    "repeatable": true,
-    "estimatedMinutes": 5
-  },
-  {
-    "id": 5,
-    "title": "Read 5 pages",
-    "difficulty": "easy",
-    "category": "learning",
-    "repeatable": true,
-    "estimatedMinutes": 10
-  },
-  {
-    "id": 21,
-    "title": "5000 steps",
-    "difficulty": "medium",
-    "category": "fitness",
-    "repeatable": true,
-    "estimatedMinutes": 45
-  },
-  {
-    "id": 22,
-    "title": "15-minute workout",
-    "difficulty": "medium",
-    "category": "fitness",
-    "repeatable": true,
-    "estimatedMinutes": 15
-  },
-  {
-    "id": 23,
-    "title": "Read 20 pages",
-    "difficulty": "medium",
-    "category": "learning",
-    "repeatable": true,
-    "estimatedMinutes": 30
-  },
-  {
-    "id": 24,
-    "title": "Write 200 words",
-    "difficulty": "medium",
-    "category": "productivity",
-    "repeatable": true,
-    "estimatedMinutes": 20
-  },
-  {
-    "id": 25,
-    "title": "Learn a new concept",
-    "difficulty": "medium",
-    "category": "learning",
-    "repeatable": true,
-    "estimatedMinutes": 30
-  },
-  {
-    "id": 36,
-    "title": "Wake up 1 hour earlier",
-    "difficulty": "hard",
-    "category": "discipline",
-    "repeatable": true,
-    "estimatedMinutes": 0
-  },
-  {
-    "id": 37,
-    "title": "45-minute deep work",
-    "difficulty": "hard",
-    "category": "productivity",
-    "repeatable": true,
-    "estimatedMinutes": 45
-  },
-  {
-    "id": 38,
-    "title": "100 push-ups",
-    "difficulty": "hard",
-    "category": "fitness",
-    "repeatable": true,
-    "estimatedMinutes": 30
-  },
-  {
-    "id": 39,
-    "title": "30-minute run or brisk walk",
-    "difficulty": "hard",
-    "category": "fitness",
-    "repeatable": true,
-    "estimatedMinutes": 30
-  },
-  {
-    "id": 40,
-    "title": "No entertainment for a day",
-    "difficulty": "hard",
-    "category": "discipline",
-    "repeatable": true,
-    "estimatedMinutes": 0
-  }
-]
+{
+  "challenges": [
+    { "id": 1, "title": "Plan your day", "difficulty": "easy", "category": "productivity", "estimatedMinutes": 5 },
+    { "id": 2, "title": "Write a short journal entry", "difficulty": "easy", "category": "mindset", "estimatedMinutes": 10 },
+    { "id": 3, "title": "Drink enough water today", "difficulty": "easy", "category": "health", "estimatedMinutes": 2 },
+    { "id": 4, "title": "Clean your workspace", "difficulty": "easy", "category": "discipline", "estimatedMinutes": 10 },
+    { "id": 5, "title": "No phone for first 30 minutes after waking", "difficulty": "easy", "category": "discipline", "estimatedMinutes": 30 },
+    { "id": 6, "title": "Review today’s goals once", "difficulty": "easy", "category": "productivity", "estimatedMinutes": 5 },
+    { "id": 7, "title": "Practice 5 minutes of deep breathing", "difficulty": "easy", "category": "focus", "estimatedMinutes": 5 },
+    { "id": 8, "title": "Organize one small area (desk, bag, folder)", "difficulty": "easy", "category": "organization", "estimatedMinutes": 10 },
+    { "id": 9, "title": "Write down 3 priorities", "difficulty": "easy", "category": "productivity", "estimatedMinutes": 5 },
+    { "id": 10, "title": "Limit notifications for the day", "difficulty": "easy", "category": "discipline", "estimatedMinutes": 5 },
+
+    { "id": 11, "title": "Learn one new concept (any topic)", "difficulty": "medium", "category": "learning", "estimatedMinutes": 30 },
+    { "id": 12, "title": "Write 200 words (thoughts or ideas)", "difficulty": "medium", "category": "productivity", "estimatedMinutes": 20 },
+    { "id": 13, "title": "30 minutes of focused work (no multitasking)", "difficulty": "medium", "category": "focus", "estimatedMinutes": 30 },
+    { "id": 14, "title": "No social media for 6 hours", "difficulty": "medium", "category": "discipline", "estimatedMinutes": 0 },
+    { "id": 15, "title": "Organize digital files or notes", "difficulty": "medium", "category": "organization", "estimatedMinutes": 25 },
+    { "id": 16, "title": "Summarize what you learned today", "difficulty": "medium", "category": "learning", "estimatedMinutes": 15 },
+    { "id": 17, "title": "Plan tomorrow in writing", "difficulty": "medium", "category": "productivity", "estimatedMinutes": 15 },
+    { "id": 18, "title": "Single-task for 1 full hour", "difficulty": "medium", "category": "focus", "estimatedMinutes": 60 },
+    { "id": 19, "title": "Avoid junk content for the day", "difficulty": "medium", "category": "discipline", "estimatedMinutes": 0 },
+    { "id": 20, "title": "Improve one existing habit by 1%", "difficulty": "medium", "category": "mindset", "estimatedMinutes": 10 },
+
+    { "id": 21, "title": "45 minutes of deep work", "difficulty": "hard", "category": "focus", "estimatedMinutes": 45 },
+    { "id": 22, "title": "Write a one-page daily reflection", "difficulty": "hard", "category": "reflection", "estimatedMinutes": 40 },
+    { "id": 23, "title": "No entertainment content all day", "difficulty": "hard", "category": "discipline", "estimatedMinutes": 0 },
+    { "id": 24, "title": "Review and refine a long-term goal", "difficulty": "hard", "category": "mindset", "estimatedMinutes": 30 },
+    { "id": 25, "title": "Complete all planned tasks without delay", "difficulty": "hard", "category": "discipline", "estimatedMinutes": 0 },
+    { "id": 26, "title": "Study a difficult topic and explain it in writing", "difficulty": "hard", "category": "learning", "estimatedMinutes": 45 },
+    { "id": 27, "title": "Silence non-essential notifications all day", "difficulty": "hard", "category": "focus", "estimatedMinutes": 0 },
+    { "id": 28, "title": "Conduct a full digital declutter session", "difficulty": "hard", "category": "organization", "estimatedMinutes": 45 },
+    { "id": 29, "title": "Track how you spend every hour today", "difficulty": "hard", "category": "awareness", "estimatedMinutes": 15 },
+    { "id": 30, "title": "End the day with a full self-review", "difficulty": "hard", "category": "reflection", "estimatedMinutes": 25 },
+
+    { "id": 31, "title": "Identify and remove one distraction source", "difficulty": "medium", "category": "focus", "estimatedMinutes": 15 },
+    { "id": 32, "title": "Write 5 actionable ideas", "difficulty": "easy", "category": "creativity", "estimatedMinutes": 10 },
+    { "id": 33, "title": "Practice mindful awareness for 10 minutes", "difficulty": "easy", "category": "mindset", "estimatedMinutes": 10 },
+    { "id": 34, "title": "Improve one note or document quality", "difficulty": "medium", "category": "learning", "estimatedMinutes": 20 },
+    { "id": 35, "title": "Reduce screen time by 30%", "difficulty": "medium", "category": "discipline", "estimatedMinutes": 0 },
+    { "id": 36, "title": "Define tomorrow’s top 3 outcomes", "difficulty": "easy", "category": "productivity", "estimatedMinutes": 5 },
+    { "id": 37, "title": "Create a simple checklist for a routine", "difficulty": "easy", "category": "organization", "estimatedMinutes": 10 },
+    { "id": 38, "title": "Do one task you have been avoiding", "difficulty": "hard", "category": "discipline", "estimatedMinutes": 30 },
+    { "id": 39, "title": "Analyze one failure and extract a lesson", "difficulty": "hard", "category": "reflection", "estimatedMinutes": 25 },
+    { "id": 40, "title": "Maintain full focus during all work sessions today", "difficulty": "hard", "category": "focus", "estimatedMinutes": 0 }
+  ]
+}
