@@ -1,29 +1,36 @@
-// src/components/HabitTracker.jsx
-import React, { useState } from 'react';
-import { Plus, Trash2, CheckCircle, Circle, TrendingUp, Sparkles, MessageSquare, Award, Zap, Star, Wand2 } from 'lucide-react';
+// src/components/parts/HabitTracker.jsx
+import { useState, useEffect } from 'react';
 import { useHabits } from '../hooks/useHabits';
-import { useTasks } from '../hooks/useTasks';
-import { useXPAndLevel } from '../hooks/useXPAndLevel';
+import { useXPAndLevel1 } from '../hooks/useXPAndLevel';
 import { useTheme } from '../ui/ThemeProvider';
 import { getDateString } from '../utils/habitStats';
-import Header from '../parts/Header';
-import ViewSwitcher from '../parts/ViewSwitcher';
-import AddHabitForm from '../parts/AddHabitForm';
-import HabitItem from '../parts/HabitItem';
-import DailyTasksList from '../parts/DailyTasksList';
-import StatsView from '../parts/StatsView';
-import AICoachSection from '../parts/AICoachSection';
+import Header from './Header';
+import ViewSwitcher from './ViewSwitcher';
+import AddHabitForm from './AddHabitForm';
+import HabitItem from './HabitItem';
+import DailyTasksList from './DailyTasksList';
+import StatsView from './StatsView';
+import AICoachSection from './AICoachSection';
+import { Plus } from 'lucide-react';
 
 export default function HabitTracker() {
-  const { habits, addHabit, deleteHabit, toggleHabit } = useHabits();
-  const { xp, level, addXP } = useXPAndLevel();
+  const { habits, addHabit, deleteHabit, toggleHabit } = useHabits(); // ← make sure addHabit is destructured
+  const { xp, level, addXP } = useXPAndLevel1();
   const [selectedView, setSelectedView] = useState('today');
   const [showAddHabit, setShowAddHabit] = useState(false);
   const { theme, isDark } = useTheme();
   const today = getDateString();
 
+  console.log("Rendering HabitTracker with habits:", habits);
+  console.log("Habits count:", habits.length);
+  console.log("First habit if exists:", habits[0]);
+
+  useEffect(() => {
+    console.log('Habits changed →', habits);
+  }, [habits]);
+
   return (
-    <div className={`min-h-screen bg-gradient-to-br ${theme.bg} text-${isDark ? 'white' : 'gray-900'} transition-colors duration-1000`}>
+    <div className={`min-h-screen bg-linear-to-br ${theme.bg} text-${isDark ? 'white' : 'gray-900'} transition-colors duration-1000`}>
       <div className="max-w-5xl mx-auto px-4 sm:px-6 py-8">
         <Header level={level} xp={xp} theme={theme} />
 
@@ -32,7 +39,13 @@ export default function HabitTracker() {
         {selectedView === 'today' && (
           <div className="space-y-10">
             {showAddHabit ? (
-              <AddHabitForm onClose={() => setShowAddHabit(false)} theme={theme} isDark={isDark} addXP={addXP} />
+              <AddHabitForm 
+                onClose={() => setShowAddHabit(false)} 
+                theme={theme} 
+                isDark={isDark} 
+                addXP={addXP}
+                addHabit={addHabit}                // ← THIS WAS MISSING → now added
+              />
             ) : (
               <button
                 onClick={() => setShowAddHabit(true)}
@@ -42,7 +55,8 @@ export default function HabitTracker() {
                     : 'border-gray-300 hover:border-indigo-400 text-gray-500 hover:text-indigo-600'
                 }`}
               >
-                <Plus className="inline mr-2" /> Add New Habit (+10 XP)
+                <Plus className="inline mr-2" size={20} /> 
+                Add New Habit (+10 XP)
               </button>
             )}
 
@@ -70,7 +84,9 @@ export default function HabitTracker() {
 
         {selectedView === 'tasks' && <DailyTasksList theme={theme} isDark={isDark} addXP={addXP} />}
 
-        {selectedView === 'stats' && <StatsView isDark={isDark} />}
+        {selectedView === 'stats' && (
+  <StatsView habits={habits} isDark={isDark} />
+)}
 
         {selectedView === 'ai' && <AICoachSection theme={theme} isDark={isDark} level={level} xp={xp} />}
       </div>

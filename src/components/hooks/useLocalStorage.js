@@ -1,23 +1,51 @@
 // src/components/hooks/useLocalStorage.js
 import { useState, useEffect } from 'react';
 
-export const useLocalStorage = (key, initialValue) => {
-  const [value, setValue] = useState(() => {
+export function useLocalStorage(key, initialValue) {
+  const readValue = () => {
     try {
-      const saved = localStorage.getItem(key);
-      return saved ? JSON.parse(saved) : initialValue;
-    } catch {
+      const stored = localStorage.getItem(key);
+      return stored ? JSON.parse(stored) : initialValue;
+    } catch (err) {
+      console.error(`Error reading ${key}:`, err);
       return initialValue;
     }
-  });
+  };
 
-  useEffect(() => {
+  const [storedValue, setStoredValue] = useState(readValue);
+
+  const saveValue = (value) => {
     try {
       localStorage.setItem(key, JSON.stringify(value));
-    } catch (error) {
-      console.error(`Error saving to localStorage for key ${key}:`, error);
+    } catch (err) {
+      console.error(`Error saving ${key}:`, err);
     }
-  }, [key, value]);
+  };
 
-  return [value, setValue];
-};
+  // This is the setter that supports updater functions
+  const setValue = (newValue) => {
+    setStoredValue((prev) => {
+      const next =
+        typeof newValue === 'function'
+          ? newValue(prev)                          // execute the updater
+          : newValue;
+
+      console.log(`useLocalStorage next value for ${key}:`, next);
+      saveValue(next);                              // save the computed value
+      return next;
+    });
+  };
+
+  // Optional: listen for changes from other tabs/windows
+  useEffect(() => {
+    const handleStorageChange = (e) => {
+      if (e.key === key) {
+        setStoredValue(readValue());
+      }
+    };
+    window.addEventListener('storage', handleStorageChange);
+    return () => window.removeEventListener('storage', handleStorageChange);
+  }, [key]);
+
+  return [storedValue, setValue];
+}

@@ -8,7 +8,6 @@ import { useXPAndLevel } from '../hooks/useXPAndLevel';
 
 export default function AIChat({ theme, isDark }) {
   const { callAnthropic } = useAI();
-  const { habits } = useHabits();
   const { tasks } = useTasks();
   const { level, xp } = useXPAndLevel();
   const [aiChat, setAiChat] = useState([]);
@@ -83,7 +82,7 @@ Respond in 2–4 sentences. Be encouraging, practical and personal.`;
         <button
           onClick={sendMessage}
           disabled={!chatInput.trim()}
-          className={`px-6 rounded-xl font-medium bg-gradient-to-r ${theme.accent} text-white disabled:opacity-50`}
+          className={`px-6 rounded-xl font-medium bg-linear-to-r ${theme.accent} text-white disabled:opacity-50`}
         >
           Send
         </button>

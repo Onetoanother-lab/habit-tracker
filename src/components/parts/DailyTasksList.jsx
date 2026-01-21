@@ -50,7 +50,7 @@ export default function DailyTasksList({ theme, isDark, addXP }) {
         <button
           onClick={generateTasks}
           disabled={generating || loading}
-          className={`px-5 py-2.5 rounded-xl font-medium flex items-center gap-2 transition-all bg-gradient-to-r ${theme.accent} text-white shadow-md disabled:opacity-50 hover:scale-105`}
+          className={`px-5 py-2.5 rounded-xl font-medium flex items-center gap-2 transition-all bg-linear-to-r ${theme.accent} text-white shadow-md disabled:opacity-50 hover:scale-105`}
         >
           {generating ? (
             <>

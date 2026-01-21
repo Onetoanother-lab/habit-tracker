@@ -8,7 +8,7 @@ export default function TaskItem({ task, onToggle, onDelete, theme, isDark }) {
         isDark ? 'bg-white/8 backdrop-blur-sm border border-white/10' : 'bg-white shadow-md'
       } ${task.completed ? 'opacity-65' : 'hover:scale-[1.01]'}`}
     >
-      <button onClick={onToggle} className="flex-shrink-0">
+      <button onClick={onToggle} className="shrink-0">
         {task.completed ? (
           <CheckCircle className="text-green-400" size={32} />
         ) : (
@@ -44,7 +44,7 @@ export default function TaskItem({ task, onToggle, onDelete, theme, isDark }) {
 
       <button
         onClick={onDelete}
-        className="opacity-40 hover:opacity-100 text-red-400 transition-opacity flex-shrink-0"
+        className="opacity-40 hover:opacity-100 text-red-400 transition-opacity shrink-0"
       >
         <Trash2 size={18} />
       </button>

@@ -9,7 +9,6 @@ import { getStreak, getCompletionRate } from '../utils/habitStats';
 
 export default function AIInsights({ theme, isDark }) {
   const { callAnthropic, loading } = useAI();
-  const { habits } = useHabits();
   const { tasks } = useTasks();
   const { level, xp } = useXPAndLevel();
   const [aiInsights, setAiInsights] = useState('');
@@ -52,7 +51,7 @@ Tone: supportive, wise, slightly playful`;
       <button
         onClick={generateInsights}
         disabled={loading || habits.length === 0}
-        className={`w-full py-4 rounded-xl font-medium transition-all flex items-center justify-center gap-3 bg-gradient-to-r ${theme.accent} text-white disabled:opacity-50 disabled:cursor-not-allowed`}
+        className={`w-full py-4 rounded-xl font-medium transition-all flex items-center justify-center gap-3 bg-linear-to-r ${theme.accent} text-white disabled:opacity-50 disabled:cursor-not-allowed`}
       >
         {loading ? (
           <>Analyzing your progress...</>
