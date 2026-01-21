@@ -1,7 +1,7 @@
 // src/components/parts/HabitTracker.jsx
 import { useState, useEffect } from 'react';
 import { useHabits } from '../hooks/useHabits';
-import { useXPAndLevel1 } from '../hooks/useXPAndLevel';
+import { useXPAndLevel } from '../hooks/useXPAndLevel';
 import { useTheme } from '../ui/ThemeProvider';
 import { getDateString } from '../utils/habitStats';
 import Header from './Header';
@@ -10,12 +10,11 @@ import AddHabitForm from './AddHabitForm';
 import HabitItem from './HabitItem';
 import DailyTasksList from './DailyTasksList';
 import StatsView from './StatsView';
-import AICoachSection from './AICoachSection';
 import { Plus } from 'lucide-react';
 
 export default function HabitTracker() {
-  const { habits, addHabit, deleteHabit, toggleHabit } = useHabits(); // ← make sure addHabit is destructured
-  const { xp, level, addXP } = useXPAndLevel1();
+  const { habits, addHabit, deleteHabit, toggleHabit } = useHabits(); 
+  const { xp, level, addXP } = useXPAndLevel();
   const [selectedView, setSelectedView] = useState('today');
   const [showAddHabit, setShowAddHabit] = useState(false);
   const { theme, isDark } = useTheme();
@@ -44,7 +43,7 @@ export default function HabitTracker() {
                 theme={theme} 
                 isDark={isDark} 
                 addXP={addXP}
-                addHabit={addHabit}                // ← THIS WAS MISSING → now added
+                addHabit={addHabit}                
               />
             ) : (
               <button
@@ -87,8 +86,6 @@ export default function HabitTracker() {
         {selectedView === 'stats' && (
   <StatsView habits={habits} isDark={isDark} />
 )}
-
-        {selectedView === 'ai' && <AICoachSection theme={theme} isDark={isDark} level={level} xp={xp} />}
       </div>
     </div>
   );

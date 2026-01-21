@@ -29,7 +29,7 @@ export default function DailyTasksList({ theme, isDark, addXP }) {
       }));
 
       addTasks(newTasks);
-      addXP(20); // Bonus for generating tasks
+      addXP(20); 
       setGenerating(false);
     }, 800);
   };
