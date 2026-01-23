@@ -10,6 +10,7 @@ import AddHabitForm from './AddHabitForm';
 import HabitItem from './HabitItem';
 import DailyTasksList from './DailyTasksList';
 import StatsView from './StatsView';
+import ChallengeView from './ChallengeView';
 
 export default function HabitTracker() {
   const { habits, addHabit, deleteHabit, toggleHabit } = useHabits(); 
@@ -127,6 +128,7 @@ export default function HabitTracker() {
 
         {selectedView === 'tasks' && <DailyTasksList theme={theme} isDark={isDark} addXP={addXP} />}
         {selectedView === 'stats' && <StatsView habits={habits} isDark={isDark} />}
+        {selectedView === 'challenges' && <ChallengeView />}
       </div>
 
       <style>{`
