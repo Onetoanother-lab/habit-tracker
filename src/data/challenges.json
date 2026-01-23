@@ -1,37 +1,237 @@
-
 {
+  "meta": {
+    "version": 1,
+    "description": "Psychology and mindset daily challenges",
+    "antiRepeatWindowDays": 7
+  },
   "challenges": [
-    { "id": 1, "title": "Write one fear you faced today", "difficulty": "easy", "category": "psychology", "estimatedMinutes": 5 },
-    { "id": 2, "title": "Delay an impulse for 10 minutes", "difficulty": "easy", "category": "self-control", "estimatedMinutes": 10 },
-    { "id": 3, "title": "Write one negative thought and reframe it", "difficulty": "easy", "category": "mindset", "estimatedMinutes": 5 },
-    { "id": 4, "title": "Sit in silence with no input", "difficulty": "easy", "category": "awareness", "estimatedMinutes": 5 },
-    { "id": 5, "title": "Notice and name your dominant emotion today", "difficulty": "easy", "category": "psychology", "estimatedMinutes": 5 },
-    { "id": 6, "title": "Do one uncomfortable but safe action", "difficulty": "easy", "category": "discipline", "estimatedMinutes": 10 },
-    { "id": 7, "title": "Avoid complaining for the entire day", "difficulty": "easy", "category": "self-control", "estimatedMinutes": 0 },
-    { "id": 8, "title": "Write 3 things you controlled today", "difficulty": "easy", "category": "mindset", "estimatedMinutes": 5 },
-    { "id": 9, "title": "Pause before every major decision today", "difficulty": "easy", "category": "awareness", "estimatedMinutes": 0 },
-    { "id": 10, "title": "Observe your thoughts without judgment", "difficulty": "easy", "category": "psychology", "estimatedMinutes": 10 },
+    {
+      "id": "e00",
+      "title": "Mindful Morning",
+      "description": "Spend 5 minutes in mindful breathing or meditation upon waking.",
+      "difficulty": "easy",
+      "category": "mindfulness",
+      "estimatedMinutes": 5
+    },
+    {
+      "id": "e01",
+      "title": "Pause Before Reacting",
+      "description": "Pause for 3 seconds before responding in any conversation today.",
+      "difficulty": "easy",
+      "category": "self-control",
+      "estimatedMinutes": 5
+    },
+    {
+      "id": "e02",
+      "title": "Neutral Face Practice",
+      "description": "Practice keeping a neutral face during casual conversations.",
+      "difficulty": "easy",
+      "category": "emotional-control",
+      "estimatedMinutes": 5
+    },
+    {
+      "id": "e03",
+      "title": "Reduce Nervous Laughter",
+      "description": "Notice moments you laugh automatically and consciously stop once.",
+      "difficulty": "easy",
+      "category": "awareness",
+      "estimatedMinutes": 5
+    },
+    {
+      "id": "e04",
+      "title": "Slow Speech",
+      "description": "Speak slightly slower than usual in conversations today.",
+      "difficulty": "easy",
+      "category": "communication",
+      "estimatedMinutes": 5
+    },
+    {
+      "id": "e05",
+      "title": "Eye Contact",
+      "description": "Maintain eye contact for 2–3 seconds while listening.",
+      "difficulty": "easy",
+      "category": "confidence",
+      "estimatedMinutes": 5
+    },
+    {
+      "id": "e06",
+      "title": "One Thought Check",
+      "description": "Catch one negative thought and let it pass without reacting.",
+      "difficulty": "easy",
+      "category": "mental-discipline",
+      "estimatedMinutes": 5
+    },
+    {
+      "id": "e07",
+      "title": "Calm Breathing Reset",
+      "description": "Do 5 slow breaths when you feel excited or distracted.",
+      "difficulty": "easy",
+      "category": "emotional-regulation",
+      "estimatedMinutes": 5
+    },
+    {
+      "id": "e08",
+      "title": "Short Answers",
+      "description": "Avoid over-explaining. Answer briefly when possible.",
+      "difficulty": "easy",
+      "category": "social-discipline",
+      "estimatedMinutes": 5
+    },
+    {
+      "id": "e09",
+      "title": "Posture Awareness",
+      "description": "Check posture twice and correct it calmly.",
+      "difficulty": "easy",
+      "category": "presence",
+      "estimatedMinutes": 5
+    },
+    {
+      "id": "e10",
+      "title": "No Apology Filter",
+      "description": "Do not apologize unless you truly made a mistake.",
+      "difficulty": "easy",
+      "category": "self-respect",
+      "estimatedMinutes": 5
+    },
 
-    { "id": 11, "title": "Identify your top distraction trigger", "difficulty": "medium", "category": "psychology", "estimatedMinutes": 15 },
-    { "id": 12, "title": "Write a belief that limits you and challenge it", "difficulty": "medium", "category": "mindset", "estimatedMinutes": 20 },
-    { "id": 13, "title": "Delay gratification for 1 hour", "difficulty": "medium", "category": "self-control", "estimatedMinutes": 60 },
-    { "id": 14, "title": "Practice emotional regulation during stress", "difficulty": "medium", "category": "discipline", "estimatedMinutes": 20 },
-    { "id": 15, "title": "Write a one-page self-observation report", "difficulty": "medium", "category": "reflection", "estimatedMinutes": 25 },
-    { "id": 16, "title": "Spend 30 minutes with zero stimulation", "difficulty": "medium", "category": "awareness", "estimatedMinutes": 30 },
-    { "id": 17, "title": "Identify one cognitive bias you showed today", "difficulty": "medium", "category": "psychology", "estimatedMinutes": 15 },
-    { "id": 18, "title": "Choose discipline over comfort once today", "difficulty": "medium", "category": "self-control", "estimatedMinutes": 20 },
-    { "id": 19, "title": "Write what you avoided today and why", "difficulty": "medium", "category": "reflection", "estimatedMinutes": 20 },
-    { "id": 20, "title": "Observe emotional reactions without acting", "difficulty": "medium", "category": "psychology", "estimatedMinutes": 30 },
 
-    { "id": 21, "title": "Spend an hour with no external stimulation", "difficulty": "hard", "category": "awareness", "estimatedMinutes": 60 },
-    { "id": 22, "title": "Write a deep analysis of your fears", "difficulty": "hard", "category": "psychology", "estimatedMinutes": 45 },
-    { "id": 23, "title": "Intentionally choose discomfort all day", "difficulty": "hard", "category": "discipline", "estimatedMinutes": 0 },
-    { "id": 24, "title": "Perform a full day of impulse control", "difficulty": "hard", "category": "self-control", "estimatedMinutes": 0 },
-    { "id": 25, "title": "Analyze patterns in your emotional reactions", "difficulty": "hard", "category": "psychology", "estimatedMinutes": 50 },
-    { "id": 26, "title": "Write a personal code of mental rules", "difficulty": "hard", "category": "mindset", "estimatedMinutes": 45 },
-    { "id": 27, "title": "Conduct a self-honesty audit", "difficulty": "hard", "category": "reflection", "estimatedMinutes": 45 },
-    { "id": 28, "title": "Observe your ego reactions all day", "difficulty": "hard", "category": "awareness", "estimatedMinutes": 0 },
-    { "id": 29, "title": "Break a negative mental habit deliberately", "difficulty": "hard", "category": "discipline", "estimatedMinutes": 40 },
-    { "id": 30, "title": "Write a full psychological self-profile", "difficulty": "hard", "category": "psychology", "estimatedMinutes": 60 }
+    {
+      "id": "m01",
+      "title": "Silence Tolerance",
+      "description": "Allow silence in a conversation without filling it.",
+      "difficulty": "medium",
+      "category": "social-confidence",
+      "estimatedMinutes": 10
+    },
+    {
+      "id": "m02",
+      "title": "Controlled Humor",
+      "description": "Laugh only when you genuinely find something funny.",
+      "difficulty": "medium",
+      "category": "emotional-control",
+      "estimatedMinutes": 10
+    },
+    {
+      "id": "m03",
+      "title": "Delayed Response",
+      "description": "Delay responding to a message or comment by 2 minutes.",
+      "difficulty": "medium",
+      "category": "impulse-control",
+      "estimatedMinutes": 10
+    },
+    {
+      "id": "m04",
+      "title": "One Boundary",
+      "description": "Say no to one small request you don’t want to do.",
+      "difficulty": "medium",
+      "category": "boundaries",
+      "estimatedMinutes": 10
+    },
+    {
+      "id": "m05",
+      "title": "Neutral Reaction to Teasing",
+      "description": "Respond neutrally to teasing without defending yourself.",
+      "difficulty": "medium",
+      "category": "resilience",
+      "estimatedMinutes": 10
+    },
+    {
+      "id": "m06",
+      "title": "Calm Under Attention",
+      "description": "Stay calm when attention is on you.",
+      "difficulty": "medium",
+      "category": "confidence",
+      "estimatedMinutes": 10
+    },
+    {
+      "id": "m07",
+      "title": "Emotional Labeling",
+      "description": "Identify one emotion you felt today without judging it.",
+      "difficulty": "medium",
+      "category": "self-awareness",
+      "estimatedMinutes": 10
+    },
+    {
+      "id": "m08",
+      "title": "No Justifying",
+      "description": "State your opinion once without explaining further.",
+      "difficulty": "medium",
+      "category": "assertiveness",
+      "estimatedMinutes": 10
+    },
+    {
+      "id": "m09",
+      "title": "Focus Block",
+      "description": "Focus on one task for 20 minutes without switching.",
+      "difficulty": "medium",
+      "category": "attention-control",
+      "estimatedMinutes": 20
+    },
+    {
+      "id": "m10",
+      "title": "Respectful Disengage",
+      "description": "Exit a conversation calmly when it becomes unproductive.",
+      "difficulty": "medium",
+      "category": "social-intelligence",
+      "estimatedMinutes": 10
+    },
+
+
+    {
+      "id": "h01",
+      "title": "Insult Control",
+      "description": "If insulted, respond calmly or not at all. No emotional reaction.",
+      "difficulty": "hard",
+      "category": "emotional-mastery",
+      "estimatedMinutes": 15
+    },
+    {
+      "id": "h02",
+      "title": "Status Neutrality",
+      "description": "Treat everyone equally regardless of status.",
+      "difficulty": "hard",
+      "category": "inner-confidence",
+      "estimatedMinutes": 15
+    },
+    {
+      "id": "h03",
+      "title": "Delayed Gratification",
+      "description": "Delay a small pleasure for at least 30 minutes.",
+      "difficulty": "hard",
+      "category": "discipline",
+      "estimatedMinutes": 30
+    },
+    {
+      "id": "h04",
+      "title": "Calm in Conflict",
+      "description": "Remain calm in a tense situation without raising voice.",
+      "difficulty": "hard",
+      "category": "conflict-management",
+      "estimatedMinutes": 15
+    },
+    {
+      "id": "h05",
+      "title": "Non-Reactive Listening",
+      "description": "Listen fully without interrupting or correcting.",
+      "difficulty": "hard",
+      "category": "emotional-intelligence",
+      "estimatedMinutes": 15
+    },
+    {
+      "id": "h06",
+      "title": "Self-Validation",
+      "description": "Do not seek approval or reassurance today.",
+      "difficulty": "hard",
+      "category": "independence",
+      "estimatedMinutes": 15
+    },
+    {
+      "id": "h07",
+      "title": "Controlled Presence",
+      "description": "Stay composed and steady regardless of environment.",
+      "difficulty": "hard",
+      "category": "presence",
+      "estimatedMinutes": 20
+    }
   ]
 }
