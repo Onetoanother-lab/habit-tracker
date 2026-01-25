@@ -1,3 +1,4 @@
+
 import { TRAITS, getTraitColor, getTraitBgColor } from '../constants/traits';
 
 export default function TraitProgress({ traits, isDark }) {
@@ -61,3 +62,4 @@ export default function TraitProgress({ traits, isDark }) {
     </div>
   );
 }
+

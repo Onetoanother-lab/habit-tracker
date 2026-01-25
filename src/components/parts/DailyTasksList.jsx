@@ -81,7 +81,7 @@ export default function DailyTasksList({ theme, isDark, addXP }) {
           ) : (
             <>
               <Wand2 size={20} className="group-hover:rotate-12 transition-transform duration-300" />
-              Get Challenges +20 XP
+              Generate Challenges +20 XP
             </>
           )}
         </button>
@@ -92,9 +92,9 @@ export default function DailyTasksList({ theme, isDark, addXP }) {
           isDark ? 'bg-white/5 border-white/20' : 'bg-linear-to-br from-purple-50 to-pink-50 border-purple-200'
         }`}>
           <Sparkles size={64} className="mx-auto mb-4 text-purple-400 animate-bounce-slow" />
-          <p className="text-xl font-bold mb-2">Ready to level up?</p>
+          <p className="text-xl font-bold mb-2">Ready to Level Up?</p>
           <p className={`text-sm ${isDark ? 'text-white/60' : 'text-gray-600'}`}>
-            Click the button above to receive your daily challenges
+            Click the button above to receive your personalized daily challenges
           </p>
         </div>
       ) : (
@@ -123,7 +123,7 @@ export default function DailyTasksList({ theme, isDark, addXP }) {
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 text-center">
             <div className="transition-all duration-300 hover:scale-110 cursor-pointer">
               <div className="text-3xl font-black bg-linear-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">{tasks.length}</div>
-              <div className={`text-xs font-semibold ${isDark ? 'text-white/60' : 'text-gray-600'}`}>Total Tasks</div>
+              <div className={`text-xs font-semibold ${isDark ? 'text-white/60' : 'text-gray-600'}`}>Total Challenges</div>
             </div>
             <div className="transition-all duration-300 hover:scale-110 cursor-pointer">
               <div className="text-3xl font-black text-green-500 animate-pulse-slow">
@@ -135,13 +135,13 @@ export default function DailyTasksList({ theme, isDark, addXP }) {
               <div className="text-3xl font-black text-yellow-500">
                 {tasks.filter(t => !t.completed).reduce((sum, t) => sum + (t.estimatedMinutes || 0), 0)}m
               </div>
-              <div className={`text-xs font-semibold ${isDark ? 'text-white/60' : 'text-gray-600'}`}>Time Left</div>
+              <div className={`text-xs font-semibold ${isDark ? 'text-white/60' : 'text-gray-600'}`}>Time Remaining</div>
             </div>
             <div className="transition-all duration-300 hover:scale-110 cursor-pointer">
               <div className="text-3xl font-black text-purple-500 animate-bounce-slow">
                 {tasks.filter(t => !t.completed).reduce((sum, t) => sum + (t.xpReward || 0), 0)} XP
               </div>
-              <div className={`text-xs font-semibold ${isDark ? 'text-white/60' : 'text-gray-600'}`}>Available</div>
+              <div className={`text-xs font-semibold ${isDark ? 'text-white/60' : 'text-gray-600'}`}>XP Available</div>
             </div>
           </div>
         </div>
@@ -149,4 +149,3 @@ export default function DailyTasksList({ theme, isDark, addXP }) {
     </div>
   );
 }
-

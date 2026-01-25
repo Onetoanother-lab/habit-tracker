@@ -43,7 +43,7 @@ export default function HabitItem({ habit, today, onToggle, onDelete, theme, isD
             }`}>
               <Flame size={14} className="text-orange-500 animate-flicker" />
               <span className={`text-sm font-semibold ${isDark ? 'text-orange-300' : 'text-orange-700'}`}>
-                {streak} day streak
+                {streak}-day streak
               </span>
             </div>
             <div className={`flex items-center gap-2 px-3 py-1.5 rounded-full transition-all duration-300 hover:scale-110 cursor-pointer ${
@@ -51,7 +51,7 @@ export default function HabitItem({ habit, today, onToggle, onDelete, theme, isD
             }`}>
               <TrendingUp size={14} className="text-blue-500" />
               <span className={`text-sm font-semibold ${isDark ? 'text-blue-300' : 'text-blue-700'}`}>
-                {completionRate}% success
+                {completionRate}% success rate
               </span>
             </div>
           </div>
@@ -67,4 +67,3 @@ export default function HabitItem({ habit, today, onToggle, onDelete, theme, isD
     </div>
   );
 }
-

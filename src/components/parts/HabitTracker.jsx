@@ -2,8 +2,13 @@ import { useState, useEffect } from 'react';
 import { useHabits } from '../hooks/useHabits';
 import { useXPAndLevel } from '../hooks/useXPAndLevel';
 import { useTheme } from '../ui/ThemeProvider';
+import { useHabitNotes } from '../hooks/useHabitNotes';
+import { useAchievements } from '../hooks/useAchievements';
+import { useWeeklyGoals } from '../hooks/useWeeklyGoals';
+import { useReminders } from '../hooks/useReminders';
+import { useAnalytics } from '../hooks/useAnalytics';
 import { getDateString } from '../utils/habitStats';
-import { Plus, Sparkles } from 'lucide-react';
+import { Plus, Sparkles, Award, Bell, Target, BarChart3, BookTemplate } from 'lucide-react';
 import Header from './Header';
 import ViewSwitcher from './ViewSwitcher';
 import AddHabitForm from './AddHabitForm';
@@ -11,15 +16,33 @@ import HabitItem from './HabitItem';
 import DailyTasksList from './DailyTasksList';
 import StatsView from './StatsView';
 import ChallengeView from './ChallengeView';
+import AchievementToast from '../ui/AchievementToast';
+import WeeklyGoalsWidget from '../ui/WeeklyGoalsWidget';
+import AnalyticsDashboard from '../ui/AnalyticsDashboard';
+import TemplatePicker from '../advanced/TemplatePicker';
 
 export default function HabitTracker() {
   const { habits, addHabit, deleteHabit, toggleHabit } = useHabits(); 
   const { xp, level, addXP } = useXPAndLevel();
   const [selectedView, setSelectedView] = useState('today');
   const [showAddHabit, setShowAddHabit] = useState(false);
+  const [showTemplatePicker, setShowTemplatePicker] = useState(false);
+  const [showWeeklyGoals, setShowWeeklyGoals] = useState(false);
+  const [showAnalytics, setShowAnalytics] = useState(false);
   const [particles, setParticles] = useState([]);
   const { theme, isDark } = useTheme();
   const today = getDateString();
+
+  // Feature hooks
+  const { addNote, getNotesForHabit } = useHabitNotes();
+  const { 
+    pendingAchievements, 
+    clearPendingAchievements,
+    achievements: allAchievements,
+    unlockedAchievements 
+  } = useAchievements(habits, level, {}, 0);
+  const { updateGoalProgress } = useWeeklyGoals();
+  const { activeReminders, dismissReminder } = useReminders();
 
   // Generate floating particles
   useEffect(() => {
@@ -34,20 +57,91 @@ export default function HabitTracker() {
     setParticles(newParticles);
   }, [level]);
 
+  // Handle habit completion with goal progress
+  const handleToggleHabit = (habitId, date) => {
+    const habit = habits.find(h => h.id === habitId);
+    const wasCompleted = habit?.completions?.[date];
+    
+    toggleHabit(habitId, date);
+    
+    if (!wasCompleted) {
+      // Update weekly goals
+      updateGoalProgress(`weekly-habit-${habitId}`, 1);
+      addXP(5);
+    }
+  };
+
+  // Handle template selection
+  const handleTemplateSelect = (template) => {
+    addHabit(template.name);
+    addXP(10);
+    setShowTemplatePicker(false);
+  };
+
+  // Handle achievement XP rewards
+  useEffect(() => {
+    if (pendingAchievements.length > 0) {
+      const achievement = allAchievements[pendingAchievements[0]];
+      if (achievement) {
+        addXP(achievement.xpReward);
+      }
+    }
+  }, [pendingAchievements]);
+
   return (
     <div className={`min-h-screen bg-linear-to-br ${theme.bg} ${isDark ? 'text-white' : 'text-gray-900'} transition-all duration-1000 relative overflow-hidden custom-cursor`}>
+      {/* Achievement Toasts */}
+      {pendingAchievements.map((achievementId, index) => {
+        const achievement = allAchievements[achievementId];
+        if (!achievement) return null;
+        return (
+          <AchievementToast
+            key={achievementId}
+            achievement={achievement}
+            onDismiss={() => {
+              clearPendingAchievements();
+            }}
+            isDark={isDark}
+          />
+        );
+      })}
+
+      {/* Reminder Notifications */}
+      {activeReminders.length > 0 && (
+        <div className="fixed top-20 right-4 z-40 space-y-2">
+          {activeReminders.map(reminder => (
+            <div
+              key={reminder.id}
+              className={`p-4 rounded-xl border backdrop-blur-xl shadow-xl animate-slide-in ${
+                isDark ? 'bg-white/10 border-white/20' : 'bg-white border-gray-200'
+              }`}
+            >
+              <div className="flex items-center gap-3">
+                <Bell className="text-blue-500 animate-bounce" size={20} />
+                <div className="flex-1">
+                  <p className="font-semibold">{reminder.habitName}</p>
+                  <p className="text-sm opacity-60">Time to complete your habit!</p>
+                </div>
+                <button
+                  onClick={() => dismissReminder(reminder.id)}
+                  className="text-gray-400 hover:text-gray-600"
+                >
+                  ×
+                </button>
+              </div>
+            </div>
+          ))}
+        </div>
+      )}
+
       {/* Enhanced animated background */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {/* Main blobs */}
         <div className={`absolute top-20 left-10 w-96 h-96 bg-linear-to-r ${theme.accent} rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob`}></div>
         <div className={`absolute top-40 right-10 w-96 h-96 bg-linear-to-r from-yellow-400 to-pink-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000`}></div>
         <div className={`absolute -bottom-8 left-20 w-96 h-96 bg-linear-to-r from-purple-400 to-indigo-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-4000`}></div>
-        
-        {/* Additional floating blobs */}
         <div className={`absolute top-1/2 left-1/2 w-64 h-64 bg-linear-to-r from-pink-400 to-rose-400 rounded-full mix-blend-multiply filter blur-3xl opacity-15 animate-float`}></div>
         <div className={`absolute bottom-1/4 right-1/4 w-80 h-80 bg-linear-to-r from-cyan-400 to-blue-400 rounded-full mix-blend-multiply filter blur-3xl opacity-15 animate-float animation-delay-3000`}></div>
         
-        {/* Floating particles */}
         {particles.map(particle => (
           <div
             key={particle.id}
@@ -61,12 +155,76 @@ export default function HabitTracker() {
           />
         ))}
 
-        {/* Grid overlay */}
         <div className={`absolute inset-0 bg-grid-pattern opacity-5`}></div>
       </div>
 
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 py-12 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-12 relative z-10">
         <Header level={level} xp={xp} theme={theme} isDark={isDark} />
+
+        {/* Quick Action Bar */}
+        <div className="flex items-center gap-3 mb-6 flex-wrap">
+          <button
+            onClick={() => setShowWeeklyGoals(!showWeeklyGoals)}
+            className={`px-4 py-2 rounded-xl font-semibold text-sm flex items-center gap-2 transition-all hover:scale-105 ${
+              showWeeklyGoals
+                ? `bg-linear-to-r ${theme.accent} text-white shadow-xl`
+                : isDark
+                  ? 'bg-white/10 hover:bg-white/20'
+                  : 'bg-gray-200 hover:bg-gray-300'
+            }`}
+          >
+            <Target size={16} />
+            Weekly Goals
+          </button>
+
+          <button
+            onClick={() => setShowAnalytics(!showAnalytics)}
+            className={`px-4 py-2 rounded-xl font-semibold text-sm flex items-center gap-2 transition-all hover:scale-105 ${
+              showAnalytics
+                ? `bg-linear-to-r ${theme.accent} text-white shadow-xl`
+                : isDark
+                  ? 'bg-white/10 hover:bg-white/20'
+                  : 'bg-gray-200 hover:bg-gray-300'
+            }`}
+          >
+            <BarChart3 size={16} />
+            Analytics
+          </button>
+
+          <button
+            onClick={() => setShowTemplatePicker(true)}
+            className={`px-4 py-2 rounded-xl font-semibold text-sm flex items-center gap-2 transition-all hover:scale-105 ${
+              isDark ? 'bg-white/10 hover:bg-white/20' : 'bg-gray-200 hover:bg-gray-300'
+            }`}
+          >
+            <BookTemplate size={16} />
+            Templates
+          </button>
+
+          <div className={`ml-auto px-4 py-2 rounded-xl flex items-center gap-2 ${
+            isDark ? 'bg-white/10' : 'bg-purple-100'
+          }`}>
+            <Award size={16} className="text-yellow-500" />
+            <span className="text-sm font-semibold">
+              {unlockedAchievements.length} / {Object.keys(allAchievements).length} Achievements
+            </span>
+          </div>
+        </div>
+
+        {/* Weekly Goals Widget */}
+        {showWeeklyGoals && (
+          <div className="mb-6 animate-slide-in">
+            <WeeklyGoalsWidget isDark={isDark} />
+          </div>
+        )}
+
+        {/* Analytics Dashboard */}
+        {showAnalytics && (
+          <div className="mb-6 animate-slide-in">
+            <AnalyticsDashboard habits={habits} isDark={isDark} />
+          </div>
+        )}
+
         <ViewSwitcher selectedView={selectedView} onChange={setSelectedView} theme={theme} isDark={isDark} />
 
         {selectedView === 'today' && (
@@ -103,10 +261,16 @@ export default function HabitTracker() {
                   isDark ? 'bg-white/5 border border-white/10' : 'bg-linear-to-br from-indigo-50 to-purple-50 border-2 border-dashed border-indigo-200'
                 }`}>
                   <Sparkles size={64} className="mx-auto mb-4 text-purple-400 animate-bounce-slow" />
-                  <p className="text-xl font-bold mb-2">Your journey begins here</p>
-                  <p className={`text-sm ${isDark ? 'text-white/60' : 'text-gray-600'}`}>
-                    Create your first habit and start building greatness 🌱
+                  <p className="text-xl font-bold mb-2">Begin Your Journey</p>
+                  <p className={`text-sm mb-4 ${isDark ? 'text-white/60' : 'text-gray-600'}`}>
+                    Create your first habit and start building a better future
                   </p>
+                  <button
+                    onClick={() => setShowTemplatePicker(true)}
+                    className="px-6 py-3 rounded-xl bg-linear-to-r from-purple-500 to-pink-500 text-white font-semibold hover:scale-105 transition-all"
+                  >
+                    Browse Templates
+                  </button>
                 </div>
               ) : (
                 habits.map((habit, index) => (
@@ -114,7 +278,7 @@ export default function HabitTracker() {
                     <HabitItem
                       habit={habit}
                       today={today}
-                      onToggle={toggleHabit}
+                      onToggle={handleToggleHabit}
                       onDelete={deleteHabit}
                       theme={theme}
                       isDark={isDark}
@@ -131,8 +295,16 @@ export default function HabitTracker() {
         {selectedView === 'challenges' && <ChallengeView />}
       </div>
 
+      {/* Template Picker Modal */}
+      {showTemplatePicker && (
+        <TemplatePicker
+          onSelect={handleTemplateSelect}
+          onClose={() => setShowTemplatePicker(false)}
+          isDark={isDark}
+        />
+      )}
+
       <style>{`
-        /* Custom cursor */
         .custom-cursor * {
           cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="%23a855f7" stroke-width="2"><circle cx="12" cy="12" r="10" fill="%23a855f7" fill-opacity="0.1"/><circle cx="12" cy="12" r="3" fill="%23a855f7"/></svg>'), auto !important;
         }
@@ -143,7 +315,6 @@ export default function HabitTracker() {
           cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="%23ec4899" stroke-width="2"><circle cx="12" cy="12" r="10" fill="%23ec4899" fill-opacity="0.2"/><circle cx="12" cy="12" r="4" fill="%23ec4899"/></svg>'), pointer !important;
         }
 
-        /* Animations */
         @keyframes linear {
           0%, 100% { background-position: 0% 50%; }
           50% { background-position: 100% 50%; }
@@ -270,7 +441,6 @@ export default function HabitTracker() {
           animation-delay: 4s;
         }
 
-        /* Grid pattern */
         .bg-grid-pattern {
           background-image: 
             linear-linear(to right, rgba(255,255,255,0.05) 1px, transparent 1px),
@@ -281,4 +451,3 @@ export default function HabitTracker() {
     </div>
   );
 }
-

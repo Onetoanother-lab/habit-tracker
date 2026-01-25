@@ -20,10 +20,10 @@ export default function AddHabitForm({ onClose, theme, isDark, addXP, addHabit }
       <div className="flex justify-between items-start mb-6">
         <div>
           <h3 className={`text-2xl font-bold mb-2 ${isDark ? 'text-white' : 'text-gray-900'}`}>
-            Create New Habit
+            Create a New Habit
           </h3>
           <p className={`text-sm ${isDark ? 'text-purple-300' : 'text-gray-600'}`}>
-            Start building a better you, one habit at a time ✨
+            Build a better version of yourself, one habit at a time
           </p>
         </div>
         <button onClick={onClose} className="text-gray-400 hover:text-red-400 transition-colors cursor-pointer">
@@ -37,7 +37,7 @@ export default function AddHabitForm({ onClose, theme, isDark, addXP, addHabit }
         value={newHabitName}
         onChange={(e) => setNewHabitName(e.target.value)}
         onKeyDown={(e) => e.key === 'Enter' && handleAdd(e)}
-        placeholder="e.g., Morning meditation, Read 30 minutes..."
+        placeholder="e.g., Morning meditation, Read for 30 minutes..."
         className={`w-full px-6 py-4 rounded-xl mb-6 text-lg transition-all duration-300 cursor-text ${
           isDark 
             ? 'bg-white/5 border-2 border-white/10 text-white placeholder-white/40 focus:border-purple-400 focus:bg-white/10 focus:shadow-lg focus:shadow-purple-500/20' 

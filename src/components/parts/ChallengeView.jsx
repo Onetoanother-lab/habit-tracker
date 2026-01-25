@@ -66,10 +66,10 @@ export default function ChallengeView() {
         }`}>
           <div className="flex items-center gap-2 mb-2">
             <Flame className="text-orange-500 animate-flicker" size={20} />
-            <span className={`text-xs font-semibold ${isDark ? 'text-white/60' : 'text-gray-600'}`}>Streak</span>
+            <span className={`text-xs font-semibold ${isDark ? 'text-white/60' : 'text-gray-600'}`}>Current Streak</span>
           </div>
           <div className="text-2xl font-black">{streak.current} days</div>
-          <div className={`text-xs ${isDark ? 'text-white/40' : 'text-gray-500'}`}>Best: {streak.best}</div>
+          <div className={`text-xs ${isDark ? 'text-white/40' : 'text-gray-500'}`}>Best: {streak.best} days</div>
         </div>
 
         <div className={`p-4 rounded-2xl backdrop-blur-sm transition-all duration-300 hover:scale-105 cursor-pointer ${
@@ -77,7 +77,7 @@ export default function ChallengeView() {
         }`}>
           <div className="flex items-center gap-2 mb-2">
             <Target className="text-blue-500" size={20} />
-            <span className={`text-xs font-semibold ${isDark ? 'text-white/60' : 'text-gray-600'}`}>Today</span>
+            <span className={`text-xs font-semibold ${isDark ? 'text-white/60' : 'text-gray-600'}`}>Today's Progress</span>
           </div>
           <div className="text-2xl font-black">{summary.completed}/{summary.total}</div>
           <div className={`text-xs ${isDark ? 'text-white/40' : 'text-gray-500'}`}>Completed</div>
@@ -88,10 +88,10 @@ export default function ChallengeView() {
         }`}>
           <div className="flex items-center gap-2 mb-2">
             <TrendingUp className="text-purple-500" size={20} />
-            <span className={`text-xs font-semibold ${isDark ? 'text-white/60' : 'text-gray-600'}`}>Difficulty</span>
+            <span className={`text-xs font-semibold ${isDark ? 'text-white/60' : 'text-gray-600'}`}>Difficulty Level</span>
           </div>
           <div className="text-2xl font-black">Level {Math.floor(difficultyLevel)}</div>
-          <div className={`text-xs ${isDark ? 'text-white/40' : 'text-gray-500'}`}>Adaptive</div>
+          <div className={`text-xs ${isDark ? 'text-white/40' : 'text-gray-500'}`}>Adaptive scaling</div>
         </div>
 
         <div className={`p-4 rounded-2xl backdrop-blur-sm transition-all duration-300 hover:scale-105 cursor-pointer ${
@@ -99,10 +99,10 @@ export default function ChallengeView() {
         }`}>
           <div className="flex items-center gap-2 mb-2">
             <Award className="text-yellow-500 animate-pulse" size={20} />
-            <span className={`text-xs font-semibold ${isDark ? 'text-white/60' : 'text-gray-600'}`}>Traits</span>
+            <span className={`text-xs font-semibold ${isDark ? 'text-white/60' : 'text-gray-600'}`}>Active Traits</span>
           </div>
           <div className="text-2xl font-black">{Object.keys(traits).length}</div>
-          <div className={`text-xs ${isDark ? 'text-white/40' : 'text-gray-500'}`}>Developing</div>
+          <div className={`text-xs ${isDark ? 'text-white/40' : 'text-gray-500'}`}>In development</div>
         </div>
       </div>
 
@@ -112,9 +112,9 @@ export default function ChallengeView() {
           isDark ? 'bg-white/5 border-white/20' : 'bg-linear-to-br from-purple-50 to-pink-50 border-purple-200'
         }`}>
           <Target size={64} className="mx-auto mb-4 text-purple-400 animate-bounce-slow" />
-          <h3 className="text-2xl font-bold mb-2">Ready for Today's Challenges?</h3>
+          <h3 className="text-2xl font-bold mb-2">Ready for Your Daily Challenges?</h3>
           <p className={`text-sm mb-6 ${isDark ? 'text-white/60' : 'text-gray-600'}`}>
-            You'll receive {DAILY_CHALLENGE_LIMIT} personalized challenges based on your progress
+            Receive {DAILY_CHALLENGE_LIMIT} personalized challenges tailored to your progress
           </p>
           <button
             onClick={handleGenerate}
@@ -175,7 +175,7 @@ export default function ChallengeView() {
       {Object.keys(traits).length > 0 && (
         <div className="mt-12">
           <h2 className="text-2xl font-black mb-6 bg-linear-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
-            Your Psychological Growth
+            Your Psychological Development
           </h2>
           <TraitProgress traits={traits} isDark={isDark} />
         </div>

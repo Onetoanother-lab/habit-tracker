@@ -6,7 +6,7 @@ export default function Header({ level, xp, theme, isDark }) {
     <header className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6 mb-12">
       <div className="space-y-2">
         <h1 className="text-5xl sm:text-6xl font-black bg-linear-to-r from-purple-400 via-pink-400 to-red-400 bg-clip-text text-transparent animate-linear-text cursor-default select-none">
-          Habit Quest
+          HabitQuest
         </h1>
         <div className="flex items-center gap-3">
           <div className={`flex items-center gap-2 px-4 py-2 rounded-full ${isDark ? 'bg-white/10' : 'bg-purple-100'} backdrop-blur-sm transition-all duration-300 hover:scale-105 hover:${isDark ? 'bg-white/15' : 'bg-purple-200'} cursor-pointer`}>

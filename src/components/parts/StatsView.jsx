@@ -4,12 +4,13 @@ import { getStreak, getCompletionRate } from '../utils/habitStats';
 export default function StatsView({ habits, isDark }) {
   return (
     <div className="space-y-6">
-      <h2 className="text-3xl font-black mb-8 bg-linear-to-r from-emerald-400 to-teal-400 bg-clip-text text-transparent">Your Progress</h2>
+      <h2 className="text-3xl font-black mb-8 bg-linear-to-r from-emerald-400 to-teal-400 bg-clip-text text-transparent">Your Progress & Achievements</h2>
 
       {habits.length === 0 ? (
         <div className={`text-center py-20 animate-fade-in ${isDark ? 'text-white/60' : 'text-gray-600'}`}>
           <TrendingUp size={64} className="mx-auto mb-4 opacity-40 animate-bounce-slow" />
-          <p className="text-xl font-bold">Start tracking habits to see amazing stats!</p>
+          <p className="text-xl font-bold mb-2">No Statistics Yet</p>
+          <p className="text-sm">Start tracking habits to see your progress and achievements</p>
         </div>
       ) : (
         habits.map((habit, index) => {

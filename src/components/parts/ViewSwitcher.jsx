@@ -1,11 +1,12 @@
 import { Target, Zap, TrendingUp, Brain } from 'lucide-react';
 
 export default function ViewSwitcher({ selectedView, onChange, theme, isDark }) {
-const views = [
-  { id: 'today', label: 'Habits', icon: Target },
-  { id: 'challenges', label: 'Challenges', icon: Brain }, // NEW
-  { id: 'stats', label: 'Stats', icon: TrendingUp }
-];
+  const views = [
+    { id: 'today', label: 'Habits', icon: Target },
+    { id: 'challenges', label: 'Challenges', icon: Brain },
+    { id: 'tasks', label: 'Tasks', icon: Zap },
+    { id: 'stats', label: 'Stats', icon: TrendingUp }
+  ];
 
   return (
     <nav className="flex flex-wrap gap-3 mb-10">

@@ -212,4 +212,3 @@ export default function ChallengeCard({ challenge, onComplete, onSkip, onFail, t
     </div>
   );
 }
-
