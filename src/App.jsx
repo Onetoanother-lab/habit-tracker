@@ -12,5 +12,5 @@ function App() {
     </StrictMode>
   );
 }
- 
+
 export default App;
