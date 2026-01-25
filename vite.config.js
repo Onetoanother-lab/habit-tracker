@@ -4,10 +4,6 @@ import tailwindcss from '@tailwindcss/vite'
 
 export default defineConfig({
   base: '/habit-tracker/',
-    build: {
-    outDir: 'docs',
-    emptyOutDir: true
-  },
   plugins: [
     tailwindcss(),
     react({
