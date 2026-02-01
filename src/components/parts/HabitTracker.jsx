@@ -10,7 +10,6 @@ import Header from './Header';
 import ViewSwitcher from './ViewSwitcher';
 import AddHabitForm from './AddHabitForm';
 import HabitItem from './HabitItem';
-import DailyTasksList from './DailyTasksList';
 import StatsView from './StatsView';
 import ChallengeView from './ChallengeView';
 import AchievementToast from '../ui/AchievementToast';
@@ -277,7 +276,6 @@ export default function HabitTracker() {
           </div>
         )}
 
-        {selectedView === 'tasks' && <DailyTasksList theme={theme} isDark={isDark} addXP={addXP} />}
         {selectedView === 'stats' && <StatsView habits={habits} isDark={isDark} />}
         {selectedView === 'challenges' && <ChallengeView />}
       </div>

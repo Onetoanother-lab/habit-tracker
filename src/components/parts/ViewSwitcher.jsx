@@ -4,7 +4,6 @@ export default function ViewSwitcher({ selectedView, onChange, theme, isDark }) 
   const views = [
     { id: 'today', label: 'Habits', icon: Target },
     { id: 'challenges', label: 'Challenges', icon: Brain },
-    { id: 'tasks', label: 'Tasks', icon: Zap },
     { id: 'stats', label: 'Stats', icon: TrendingUp }
   ];
 
