@@ -9,7 +9,7 @@ function App() {
       <ThemeProvider>
         <HabitTracker />
       </ThemeProvider>
-    </StrictMode>
+    </StrictMode> 
   );
 }
 
