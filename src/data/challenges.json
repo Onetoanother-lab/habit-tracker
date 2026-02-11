@@ -3,8 +3,8 @@
     "version": 2,
     "description": "Psychology and behavioral development challenges",
     "antiRepeatWindowDays": 7,
-    "lastUpdated": "2025-01-24T00:00:00Z",
-    "totalChallenges": 30
+    "lastUpdated": "2026-02-11T12:57:20.349906Z",
+    "totalChallenges": 38
   },
   "categories": {
     "awareness": {
@@ -54,6 +54,12 @@
       "description": "Reading and navigating social dynamics",
       "icon": "🤝",
       "color": "pink"
+    },
+    "holistic-development": {
+      "name": "Holistic Development",
+      "description": "Balanced weekly self‑improvement across life traits",
+      "icon": "🌐",
+      "color": "teal"
     }
   },
   "badges": {
@@ -112,7 +118,12 @@
       "streakBoost": true,
       "isDaily": true,
       "isWeekly": false,
-      "tags": ["morning", "meditation", "breathing", "mindfulness"],
+      "tags": [
+        "morning",
+        "meditation",
+        "breathing",
+        "mindfulness"
+      ],
       "context": "morning",
       "dependencies": [],
       "reflectionPrompt": "How did starting your day mindfully affect your morning?",
@@ -132,7 +143,11 @@
       "streakBoost": false,
       "isDaily": true,
       "isWeekly": false,
-      "tags": ["conversation", "impulse-control", "mindfulness"],
+      "tags": [
+        "conversation",
+        "impulse-control",
+        "mindfulness"
+      ],
       "context": "social",
       "dependencies": [],
       "reflectionPrompt": "How did pausing change the quality of your conversations?",
@@ -152,7 +167,11 @@
       "streakBoost": false,
       "isDaily": true,
       "isWeekly": false,
-      "tags": ["facial-control", "conversation", "composure"],
+      "tags": [
+        "facial-control",
+        "conversation",
+        "composure"
+      ],
       "context": "social",
       "dependencies": [],
       "reflectionPrompt": "What did you notice about maintaining a neutral expression?",
@@ -172,7 +191,11 @@
       "streakBoost": false,
       "isDaily": true,
       "isWeekly": false,
-      "tags": ["nervous-habits", "self-awareness", "social"],
+      "tags": [
+        "nervous-habits",
+        "self-awareness",
+        "social"
+      ],
       "context": "social",
       "dependencies": [],
       "reflectionPrompt": "What triggered your nervous laughter? How did it feel to stop?",
@@ -192,7 +215,11 @@
       "streakBoost": false,
       "isDaily": true,
       "isWeekly": false,
-      "tags": ["speech", "communication", "pacing"],
+      "tags": [
+        "speech",
+        "communication",
+        "pacing"
+      ],
       "context": "social",
       "dependencies": [],
       "reflectionPrompt": "How did speaking slower affect your interactions?",
@@ -212,7 +239,11 @@
       "streakBoost": false,
       "isDaily": true,
       "isWeekly": false,
-      "tags": ["eye-contact", "presence", "confidence"],
+      "tags": [
+        "eye-contact",
+        "presence",
+        "confidence"
+      ],
       "context": "social",
       "dependencies": [],
       "reflectionPrompt": "How did maintaining eye contact make you feel?",
@@ -232,7 +263,11 @@
       "streakBoost": true,
       "isDaily": true,
       "isWeekly": false,
-      "tags": ["mental-discipline", "thoughts", "mindfulness"],
+      "tags": [
+        "mental-discipline",
+        "thoughts",
+        "mindfulness"
+      ],
       "context": "internal",
       "dependencies": [],
       "reflectionPrompt": "What thought did you observe? How did it feel to let it go?",
@@ -252,7 +287,11 @@
       "streakBoost": true,
       "isDaily": true,
       "isWeekly": false,
-      "tags": ["breathing", "calm", "reset"],
+      "tags": [
+        "breathing",
+        "calm",
+        "reset"
+      ],
       "context": "any",
       "dependencies": [],
       "reflectionPrompt": "When did you use this technique? What changed?",
@@ -272,7 +311,11 @@
       "streakBoost": false,
       "isDaily": true,
       "isWeekly": false,
-      "tags": ["brevity", "communication", "social-discipline"],
+      "tags": [
+        "brevity",
+        "communication",
+        "social-discipline"
+      ],
       "context": "social",
       "dependencies": [],
       "reflectionPrompt": "How did brevity change your communication dynamics?",
@@ -292,7 +335,11 @@
       "streakBoost": false,
       "isDaily": true,
       "isWeekly": false,
-      "tags": ["posture", "body-awareness", "presence"],
+      "tags": [
+        "posture",
+        "body-awareness",
+        "presence"
+      ],
       "context": "any",
       "dependencies": [],
       "reflectionPrompt": "What did you notice about your posture throughout the day?",
@@ -312,7 +359,11 @@
       "streakBoost": false,
       "isDaily": true,
       "isWeekly": false,
-      "tags": ["self-respect", "boundaries", "confidence"],
+      "tags": [
+        "self-respect",
+        "boundaries",
+        "confidence"
+      ],
       "context": "social",
       "dependencies": [],
       "reflectionPrompt": "How many times did you catch yourself about to apologize unnecessarily?",
@@ -332,9 +383,15 @@
       "streakBoost": false,
       "isDaily": true,
       "isWeekly": false,
-      "tags": ["silence", "social-confidence", "comfort"],
+      "tags": [
+        "silence",
+        "social-confidence",
+        "comfort"
+      ],
       "context": "social",
-      "dependencies": ["c006"],
+      "dependencies": [
+        "c006"
+      ],
       "reflectionPrompt": "How did it feel to sit with silence? How did others react?",
       "requiresReflection": false,
       "badge": null,
@@ -352,9 +409,15 @@
       "streakBoost": false,
       "isDaily": true,
       "isWeekly": false,
-      "tags": ["humor", "authenticity", "emotional-control"],
+      "tags": [
+        "humor",
+        "authenticity",
+        "emotional-control"
+      ],
       "context": "social",
-      "dependencies": ["c004"],
+      "dependencies": [
+        "c004"
+      ],
       "reflectionPrompt": "When did you laugh genuinely vs. automatically?",
       "requiresReflection": false,
       "badge": null,
@@ -372,9 +435,15 @@
       "streakBoost": false,
       "isDaily": true,
       "isWeekly": false,
-      "tags": ["impulse-control", "digital", "patience"],
+      "tags": [
+        "impulse-control",
+        "digital",
+        "patience"
+      ],
       "context": "online",
-      "dependencies": ["c002"],
+      "dependencies": [
+        "c002"
+      ],
       "reflectionPrompt": "How did waiting change your response?",
       "requiresReflection": false,
       "badge": null,
@@ -392,9 +461,15 @@
       "streakBoost": false,
       "isDaily": true,
       "isWeekly": false,
-      "tags": ["boundaries", "assertiveness", "self-respect"],
+      "tags": [
+        "boundaries",
+        "assertiveness",
+        "self-respect"
+      ],
       "context": "social",
-      "dependencies": ["c011"],
+      "dependencies": [
+        "c011"
+      ],
       "reflectionPrompt": "What did you say no to? How did it feel?",
       "requiresReflection": true,
       "badge": null,
@@ -412,9 +487,15 @@
       "streakBoost": false,
       "isDaily": true,
       "isWeekly": false,
-      "tags": ["teasing", "emotional-control", "resilience"],
+      "tags": [
+        "teasing",
+        "emotional-control",
+        "resilience"
+      ],
       "context": "social",
-      "dependencies": ["c003"],
+      "dependencies": [
+        "c003"
+      ],
       "reflectionPrompt": "How did you respond? What did you feel internally?",
       "requiresReflection": false,
       "badge": null,
@@ -432,9 +513,16 @@
       "streakBoost": false,
       "isDaily": true,
       "isWeekly": false,
-      "tags": ["attention", "composure", "social-anxiety"],
+      "tags": [
+        "attention",
+        "composure",
+        "social-anxiety"
+      ],
       "context": "social",
-      "dependencies": ["c006", "c010"],
+      "dependencies": [
+        "c006",
+        "c010"
+      ],
       "reflectionPrompt": "How did you handle being the center of attention?",
       "requiresReflection": false,
       "badge": null,
@@ -452,9 +540,15 @@
       "streakBoost": true,
       "isDaily": true,
       "isWeekly": false,
-      "tags": ["emotions", "self-awareness", "mindfulness"],
+      "tags": [
+        "emotions",
+        "self-awareness",
+        "mindfulness"
+      ],
       "context": "internal",
-      "dependencies": ["c007"],
+      "dependencies": [
+        "c007"
+      ],
       "reflectionPrompt": "What emotion did you identify? What triggered it?",
       "requiresReflection": true,
       "badge": null,
@@ -472,9 +566,16 @@
       "streakBoost": false,
       "isDaily": true,
       "isWeekly": false,
-      "tags": ["assertiveness", "boundaries", "self-respect"],
+      "tags": [
+        "assertiveness",
+        "boundaries",
+        "self-respect"
+      ],
       "context": "social",
-      "dependencies": ["c009", "c015"],
+      "dependencies": [
+        "c009",
+        "c015"
+      ],
       "reflectionPrompt": "What did you assert? How did others respond?",
       "requiresReflection": false,
       "badge": null,
@@ -492,7 +593,11 @@
       "streakBoost": true,
       "isDaily": true,
       "isWeekly": false,
-      "tags": ["focus", "attention-control", "productivity"],
+      "tags": [
+        "focus",
+        "attention-control",
+        "productivity"
+      ],
       "context": "work",
       "dependencies": [],
       "reflectionPrompt": "What task did you focus on? What tried to distract you?",
@@ -512,9 +617,15 @@
       "streakBoost": false,
       "isDaily": true,
       "isWeekly": false,
-      "tags": ["boundaries", "social-awareness", "energy"],
+      "tags": [
+        "boundaries",
+        "social-awareness",
+        "energy"
+      ],
       "context": "social",
-      "dependencies": ["c015"],
+      "dependencies": [
+        "c015"
+      ],
       "reflectionPrompt": "What conversation did you exit? How did you do it?",
       "requiresReflection": false,
       "badge": null,
@@ -532,9 +643,16 @@
       "streakBoost": false,
       "isDaily": true,
       "isWeekly": false,
-      "tags": ["emotional-mastery", "insults", "composure"],
+      "tags": [
+        "emotional-mastery",
+        "insults",
+        "composure"
+      ],
       "context": "social",
-      "dependencies": ["c016", "c013"],
+      "dependencies": [
+        "c016",
+        "c013"
+      ],
       "reflectionPrompt": "What was said? How did you respond internally and externally?",
       "requiresReflection": true,
       "badge": null,
@@ -552,9 +670,16 @@
       "streakBoost": false,
       "isDaily": true,
       "isWeekly": false,
-      "tags": ["equality", "inner-confidence", "presence"],
+      "tags": [
+        "equality",
+        "inner-confidence",
+        "presence"
+      ],
       "context": "social",
-      "dependencies": ["c006", "c017"],
+      "dependencies": [
+        "c006",
+        "c017"
+      ],
       "reflectionPrompt": "Did you notice yourself changing behavior based on status?",
       "requiresReflection": true,
       "badge": null,
@@ -572,9 +697,16 @@
       "streakBoost": true,
       "isDaily": true,
       "isWeekly": false,
-      "tags": ["willpower", "self-control", "delayed-gratification"],
+      "tags": [
+        "willpower",
+        "self-control",
+        "delayed-gratification"
+      ],
       "context": "any",
-      "dependencies": ["c002", "c014"],
+      "dependencies": [
+        "c002",
+        "c014"
+      ],
       "reflectionPrompt": "What did you delay? How did the craving change over time?",
       "requiresReflection": false,
       "badge": {
@@ -597,9 +729,16 @@
       "streakBoost": false,
       "isDaily": true,
       "isWeekly": false,
-      "tags": ["conflict", "calm", "emotional-control"],
+      "tags": [
+        "conflict",
+        "calm",
+        "emotional-control"
+      ],
       "context": "social",
-      "dependencies": ["c008", "c022"],
+      "dependencies": [
+        "c008",
+        "c022"
+      ],
       "reflectionPrompt": "What was the conflict? How did staying calm affect the outcome?",
       "requiresReflection": true,
       "badge": null,
@@ -617,9 +756,15 @@
       "streakBoost": false,
       "isDaily": true,
       "isWeekly": false,
-      "tags": ["listening", "emotional-intelligence", "presence"],
+      "tags": [
+        "listening",
+        "emotional-intelligence",
+        "presence"
+      ],
       "context": "social",
-      "dependencies": ["c012"],
+      "dependencies": [
+        "c012"
+      ],
       "reflectionPrompt": "What did you hear that you might have missed otherwise?",
       "requiresReflection": false,
       "badge": null,
@@ -637,9 +782,16 @@
       "streakBoost": true,
       "isDaily": true,
       "isWeekly": false,
-      "tags": ["independence", "self-trust", "validation"],
+      "tags": [
+        "independence",
+        "self-trust",
+        "validation"
+      ],
       "context": "any",
-      "dependencies": ["c019", "c023"],
+      "dependencies": [
+        "c019",
+        "c023"
+      ],
       "reflectionPrompt": "When did you feel the urge to seek validation? How did you handle it?",
       "requiresReflection": true,
       "badge": null,
@@ -657,9 +809,16 @@
       "streakBoost": false,
       "isDaily": true,
       "isWeekly": false,
-      "tags": ["presence", "composure", "environmental-control"],
+      "tags": [
+        "presence",
+        "composure",
+        "environmental-control"
+      ],
       "context": "any",
-      "dependencies": ["c017", "c025"],
+      "dependencies": [
+        "c017",
+        "c025"
+      ],
       "reflectionPrompt": "In what environments did you struggle to maintain presence?",
       "requiresReflection": true,
       "badge": null,
@@ -677,9 +836,15 @@
       "streakBoost": true,
       "isDaily": false,
       "isWeekly": true,
-      "tags": ["deep-work", "focus", "productivity"],
+      "tags": [
+        "deep-work",
+        "focus",
+        "productivity"
+      ],
       "context": "work",
-      "dependencies": ["c020"],
+      "dependencies": [
+        "c020"
+      ],
       "reflectionPrompt": "What task did you complete? What was most challenging?",
       "requiresReflection": false,
       "badge": {
@@ -702,14 +867,207 @@
       "streakBoost": false,
       "isDaily": false,
       "isWeekly": true,
-      "tags": ["reflection", "social-dynamics", "energy-management"],
+      "tags": [
+        "reflection",
+        "social-dynamics",
+        "energy-management"
+      ],
       "context": "social",
-      "dependencies": ["c021"],
+      "dependencies": [
+        "c021"
+      ],
       "reflectionPrompt": "What patterns did you notice about your social energy?",
       "requiresReflection": true,
       "badge": null,
       "createdAt": "2025-01-24T00:00:00Z",
       "updatedAt": "2025-01-24T00:00:00Z"
+    },
+    {
+      "id": "c031",
+      "title": "Weekly Financial Literacy",
+      "description": "Learn one personal finance concept and track weekly spending.",
+      "category": "holistic-development",
+      "difficulty": "medium",
+      "timeEstimate": 30,
+      "rewardPoints": 40,
+      "streakBoost": false,
+      "isDaily": false,
+      "isWeekly": true,
+      "tags": [
+        "finance",
+        "budget",
+        "literacy"
+      ],
+      "context": "any",
+      "dependencies": [],
+      "reflectionPrompt": "What did you learn from this weekly development task?",
+      "requiresReflection": false,
+      "badge": null,
+      "createdAt": "2026-02-11T12:57:20.349760Z",
+      "updatedAt": "2026-02-11T12:57:20.349770Z"
+    },
+    {
+      "id": "c032",
+      "title": "Weekly Physical Progress",
+      "description": "Complete at least three structured workouts and track progress.",
+      "category": "holistic-development",
+      "difficulty": "medium",
+      "timeEstimate": 30,
+      "rewardPoints": 40,
+      "streakBoost": false,
+      "isDaily": false,
+      "isWeekly": true,
+      "tags": [
+        "fitness",
+        "strength",
+        "health"
+      ],
+      "context": "any",
+      "dependencies": [],
+      "reflectionPrompt": "What did you learn from this weekly development task?",
+      "requiresReflection": false,
+      "badge": null,
+      "createdAt": "2026-02-11T12:57:20.349773Z",
+      "updatedAt": "2026-02-11T12:57:20.349774Z"
+    },
+    {
+      "id": "c033",
+      "title": "Weekly Knowledge Expansion",
+      "description": "Study one new academic or technical topic in depth.",
+      "category": "holistic-development",
+      "difficulty": "medium",
+      "timeEstimate": 30,
+      "rewardPoints": 40,
+      "streakBoost": false,
+      "isDaily": false,
+      "isWeekly": true,
+      "tags": [
+        "learning",
+        "knowledge",
+        "intellectual"
+      ],
+      "context": "any",
+      "dependencies": [],
+      "reflectionPrompt": "What did you learn from this weekly development task?",
+      "requiresReflection": false,
+      "badge": null,
+      "createdAt": "2026-02-11T12:57:20.349776Z",
+      "updatedAt": "2026-02-11T12:57:20.349777Z"
+    },
+    {
+      "id": "c034",
+      "title": "Weekly Social Skill Practice",
+      "description": "Improve communication: active listening, eye contact, clarity.",
+      "category": "holistic-development",
+      "difficulty": "medium",
+      "timeEstimate": 30,
+      "rewardPoints": 40,
+      "streakBoost": false,
+      "isDaily": false,
+      "isWeekly": true,
+      "tags": [
+        "social",
+        "communication"
+      ],
+      "context": "any",
+      "dependencies": [],
+      "reflectionPrompt": "What did you learn from this weekly development task?",
+      "requiresReflection": false,
+      "badge": null,
+      "createdAt": "2026-02-11T12:57:20.349779Z",
+      "updatedAt": "2026-02-11T12:57:20.349780Z"
+    },
+    {
+      "id": "c035",
+      "title": "Weekly Emotional Regulation",
+      "description": "Practice calm breathing, reflection, and emotional awareness.",
+      "category": "holistic-development",
+      "difficulty": "medium",
+      "timeEstimate": 30,
+      "rewardPoints": 40,
+      "streakBoost": false,
+      "isDaily": false,
+      "isWeekly": true,
+      "tags": [
+        "emotions",
+        "self-control"
+      ],
+      "context": "any",
+      "dependencies": [],
+      "reflectionPrompt": "What did you learn from this weekly development task?",
+      "requiresReflection": false,
+      "badge": null,
+      "createdAt": "2026-02-11T12:57:20.349783Z",
+      "updatedAt": "2026-02-11T12:57:20.349784Z"
+    },
+    {
+      "id": "c036",
+      "title": "Weekly Productivity Planning",
+      "description": "Plan weekly priorities and complete at least one deep work session.",
+      "category": "holistic-development",
+      "difficulty": "medium",
+      "timeEstimate": 30,
+      "rewardPoints": 40,
+      "streakBoost": false,
+      "isDaily": false,
+      "isWeekly": true,
+      "tags": [
+        "productivity",
+        "planning"
+      ],
+      "context": "any",
+      "dependencies": [],
+      "reflectionPrompt": "What did you learn from this weekly development task?",
+      "requiresReflection": false,
+      "badge": null,
+      "createdAt": "2026-02-11T12:57:20.349786Z",
+      "updatedAt": "2026-02-11T12:57:20.349787Z"
+    },
+    {
+      "id": "c037",
+      "title": "Weekly Integrity Check",
+      "description": "Reflect on honesty, responsibility, and commitments kept.",
+      "category": "holistic-development",
+      "difficulty": "medium",
+      "timeEstimate": 30,
+      "rewardPoints": 40,
+      "streakBoost": false,
+      "isDaily": false,
+      "isWeekly": true,
+      "tags": [
+        "character",
+        "integrity"
+      ],
+      "context": "any",
+      "dependencies": [],
+      "reflectionPrompt": "What did you learn from this weekly development task?",
+      "requiresReflection": false,
+      "badge": null,
+      "createdAt": "2026-02-11T12:57:20.349789Z",
+      "updatedAt": "2026-02-11T12:57:20.349790Z"
+    },
+    {
+      "id": "c038",
+      "title": "Weekly Creativity Block",
+      "description": "Spend dedicated time creating: writing, drawing, or brainstorming.",
+      "category": "holistic-development",
+      "difficulty": "medium",
+      "timeEstimate": 30,
+      "rewardPoints": 40,
+      "streakBoost": false,
+      "isDaily": false,
+      "isWeekly": true,
+      "tags": [
+        "creativity",
+        "innovation"
+      ],
+      "context": "any",
+      "dependencies": [],
+      "reflectionPrompt": "What did you learn from this weekly development task?",
+      "requiresReflection": false,
+      "badge": null,
+      "createdAt": "2026-02-11T12:57:20.349794Z",
+      "updatedAt": "2026-02-11T12:57:20.349796Z"
     }
   ]
 }
