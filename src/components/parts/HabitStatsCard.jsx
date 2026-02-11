@@ -1,6 +1,5 @@
 // src/components/parts/HabitStatsCard.jsx
 import { Trash2 } from 'lucide-react';
-import { useHabits } from '../hooks/useHabits';
 import { getStreak, getCompletionRate } from '../utils/habitStats';
 
 export default function HabitStatsCard({ habit, isDark }) {
